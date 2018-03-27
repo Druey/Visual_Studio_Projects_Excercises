@@ -24,8 +24,7 @@ namespace Ifu_Project
     {
         Exchanges ElementaryExchanges=null;
         validIntermediateExchanges IntermediateExchanges = null;
-        List<intermediateExchange> uniqueIntermediate = null;
-        List<elementaryExchange> uniqueElementary = null;
+        
         public MainWindow()
         {
             
@@ -57,7 +56,8 @@ namespace Ifu_Project
         {
             //IndexOf("string", StringComparison.OrdinalIgnoreCase) >= 0;
 
-
+            List<intermediateExchange> uniqueIntermediate = null;
+            List<elementaryExchange> uniqueElementary = null;
             if (Research.Text.Length>=3)
             {   
                 List<intermediateExchange> List1 = IntermediateExchanges.Materials.FindAll(x => x.Name.Contains(Research.Text));
@@ -78,12 +78,12 @@ namespace Ifu_Project
 
                 uniqueIntermediate = intermediateCompleteList.Distinct().ToList();
                 uniqueElementary = elementaryCompleteList.Distinct().ToList();
-                List<object> uno = new List<object>();
-                uno.AddRange(uniqueIntermediate);
-                uno.AddRange(uniqueElementary);
+                List<object> MaterialList = new List<object>();
+                MaterialList.AddRange(uniqueIntermediate);
+                MaterialList.AddRange(uniqueElementary);
                 
 
-                Research.ItemsSource = uno;
+                Research.ItemsSource = MaterialList;
                 Research.IsDropDownOpen = true;
                 var edit = (TextBox)Research.Template.FindName("PART_EditableTextBox", Research);
                 edit.Select(0, 0);
@@ -92,18 +92,34 @@ namespace Ifu_Project
             }
             
         }
-        
+
 
         private void Research_SelectedItem(object sender, SelectionChangedEventArgs e)
         {
-            intermediateExchange SelectedItem = (intermediateExchange)Research.SelectedItem;
+            bool elementary;
+            object SelectedItem = null;
+            if (Research.SelectedItem is intermediateExchange)
+            {
+                SelectedItem = (intermediateExchange)Research.SelectedItem;
+                elementary = false;
+            }
+            else
+            {
+                SelectedItem = (elementaryExchange)Research.SelectedItem;
+                elementary = true;
+            }
             if (SelectedItem != null)
             {
+                if (elementary == true)
+                {
+                    Research.Text = ((elementaryExchange)SelectedItem).Name;
+                }
+                else {
 
-                
-                Research.Text = SelectedItem.Name;
+                    Research.Text = ((intermediateExchange)SelectedItem).Name;
+                    Material.Content = ((intermediateExchange)SelectedItem).Name;
+                }
             }
-
         }
     }
 }
