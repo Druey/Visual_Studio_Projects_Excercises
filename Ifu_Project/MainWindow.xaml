@@ -4,8 +4,10 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Ifu_Project"
+        xmlns:control = "clr-namespace:IfuControl"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
+        
     <Grid>
         
         <Label
@@ -19,29 +21,9 @@
             FontFamily="Arial"
             >
         </Label>
+        <control:MaterialComboBox x:Name="MaterialSearch" Margin="0,0,0,80" />
 
-        <ComboBox Name="Research" 
-          Margin="0,100,0,0" Width="200" Height="30"          
-          IsEditable="True"   
-          Selector.IsSelected="false" 
-          SelectionChanged="Research_SelectedItem"      
-          IsDropDownOpen="False" StaysOpenOnEdit="True"   IsTextSearchEnabled="False" TextBoxBase.TextChanged="Research_TextChanged"   >
-            <ComboBox.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel Orientation="Horizontal">
-                        
-                        <TextBlock Text="{Binding Name}" />
 
-                        <TextBlock Text="{Binding classification_Value.ClassValue}" />
-
-                    </StackPanel>
-                </DataTemplate>
-                
-            </ComboBox.ItemTemplate>
-            
-            
-
-        </ComboBox>
 
     </Grid>
 </Window>
