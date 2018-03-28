@@ -9,19 +9,58 @@
         Title="MainWindow" Height="350" Width="525">
         
     <Grid>
+
+        <Grid Name="ExchangeTable" Width="210" Height="145">
+            
+            
+            
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="70"/>
+                <ColumnDefinition Width="70"/>
+                <ColumnDefinition Width="70"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="35"/>
+                <RowDefinition Height="35"/>
+                <RowDefinition Height="35"/>
+                <RowDefinition Height="35"/>
+            </Grid.RowDefinitions>
+            <Border Grid.Column="0" Grid.Row="0" BorderBrush="Black" 
+        BorderThickness="2,2,0,0" Background="{x:Null}" />
+            <Border Grid.Column="0" Grid.Row="1" BorderBrush="Black" 
+        BorderThickness="2,2,0,0" Background="{x:Null}" />
+            <Border Grid.Column="0" Grid.Row="2" BorderBrush="Black" 
+        BorderThickness="2,2,0,0" Background="{x:Null}" />
+            <Border Grid.Column="0" Grid.Row="3" BorderBrush="Black" 
+        BorderThickness="2,2,0,2" Background="{x:Null}" />
+            <Border Grid.Column="1" Grid.Row="0" BorderBrush="Black" 
+        BorderThickness="2,2,0,0" Background="{x:Null}" />
+            <Border Grid.Column="1" Grid.Row="1" BorderBrush="Black" 
+        BorderThickness="2,2,0,0" Background="{x:Null}" />
+            <Border Grid.Column="1" Grid.Row="2" BorderBrush="Black" 
+        BorderThickness="2,2,0,0" Background="{x:Null}" />
+            <Border Grid.Column="1" Grid.Row="3" BorderBrush="Black" 
+        BorderThickness="2,2,0,2" Background="{x:Null}" />
+            <Border Grid.Column="2" Grid.Row="0" BorderBrush="Black" 
+        BorderThickness="2,2,2,0" Background="{x:Null}" />
+            <Border Grid.Column="2" Grid.Row="1" BorderBrush="Black" 
+        BorderThickness="2,2,2,0" Background="{x:Null}" />
+            <Border Grid.Column="2" Grid.Row="2" BorderBrush="Black" 
+        BorderThickness="2,2,2,0" Background="{x:Null}" />
+            <Border Grid.Column="2" Grid.Row="3" BorderBrush="Black" 
+        BorderThickness="2,2,2,2" Background="{x:Null}" />
+            <Label  Content="Material" Grid.Column="0" Grid.Row="0"/>
+            <Label  Content="Quantity" Grid.Column="1" Grid.Row="0"/>
+            <Label  Content="Unit" Grid.Column="2" Grid.Row="0"/>
+            <control:MaterialComboBox x:Name="MaterialSearch" Margin="0,0,0,0" Grid.Column="0" Grid.Row="3" VerticalAlignment="Stretch"/>
+
+            <Label Name="Panel"  Grid.Column="0" Grid.Row="3" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" UIElement.PreviewMouseDown="StackPanel_PreviewMouseDown"/>
+           
+            
+        </Grid>
         
-        <Label
-            VerticalAlignment="Center"
-            HorizontalAlignment="Center"
-            Width="127"
-            Height="23"
-            Margin="0,43,0,0"
-            Name="Material"
-            Content="Ciao"
-            FontFamily="Arial"
-            >
-        </Label>
-        <control:MaterialComboBox x:Name="MaterialSearch" Margin="0,0,0,80" />
+        
+        
 
 
 
