@@ -23,9 +23,14 @@ namespace IfuControl
     /// </summary>
     public partial class MaterialComboBox : UserControl
     {
-        Exchanges ElementaryExchanges = null;
+        Exchanges ElementaryExchanges = null; 
         validIntermediateExchanges IntermediateExchanges = null; 
-        string selectedItem;
+        public string strSelectedItem;
+        public string strUnitName;
+        public event EventHandler<EventArgs> ObjectSelected;
+
+        
+
         public MaterialComboBox()
         {
             XmlSerializer serializer = new XmlSerializer(typeof(Exchanges));
@@ -87,11 +92,11 @@ namespace IfuControl
                 var edit = (TextBox)Research.Template.FindName("PART_EditableTextBox", Research);
                 edit.Select(0, 0);
                 edit.CaretIndex = edit.Text.Length;
-                if (selectedItem != null)
+                if (strSelectedItem != null)
                 {
 
-                    edit.Text = selectedItem;
-                    selectedItem = null;
+                    edit.Text = strSelectedItem;
+                    strSelectedItem = null;
                 }
             }
 
@@ -104,16 +109,19 @@ namespace IfuControl
             
             if (Research.SelectedItem is intermediateExchange)
             {
-                selectedItem = ((intermediateExchange)Research.SelectedItem).Name;
-                
+                strSelectedItem = ((intermediateExchange)Research.SelectedItem).Name;
+                strUnitName= ((intermediateExchange)Research.SelectedItem).UnitName;
+
             }
             else if (Research.SelectedItem is elementaryExchange)
             {
-                selectedItem = ((elementaryExchange)Research.SelectedItem).Name;
-                
+                strSelectedItem = ((elementaryExchange)Research.SelectedItem).Name;
+                strUnitName= ((elementaryExchange)Research.SelectedItem).UnitName;
+
             }
             Research.IsDropDownOpen = false;
-
+            EventArgs args=new EventArgs();
+            if (ObjectSelected != null) ObjectSelected(this,args);
 
 
         }

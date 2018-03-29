@@ -30,18 +30,10 @@ namespace Ifu_Project
         {
             
             InitializeComponent();
-            MaterialSearch.Width = this.Width + 10;
-            MaterialSearch.Visibility = Visibility.Hidden;
-        }
-
-        private void StackPanel_PreviewMouseDown(object sender, MouseButtonEventArgs e)
-        {
-            Panel.Visibility = Visibility.Hidden;
-            MaterialSearch.Visibility = Visibility.Visible;
             
-            var edit = (TextBox)MaterialSearch.Research.Template.FindName("PART_EditableTextBox", MaterialSearch.Research);
-            edit.Focus();
-
         }
+
+        
+        
     }
 }

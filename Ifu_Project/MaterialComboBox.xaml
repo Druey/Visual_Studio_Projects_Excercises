@@ -12,7 +12,7 @@
           IsEditable="True"   
           Selector.IsSelected="True" 
           SelectionChanged="Research_SelectedItem"      
-          IsDropDownOpen="False" StaysOpenOnEdit="True"   IsTextSearchEnabled="False" TextBoxBase.TextChanged="Research_TextChanged"  VerticalAlignment="Stretch"   >
+          IsDropDownOpen="False" StaysOpenOnEdit="True"   IsTextSearchEnabled="False" TextBoxBase.TextChanged="Research_TextChanged"  VerticalAlignment="Stretch"    >
         
         <ComboBox.ItemTemplate>
                 <DataTemplate>
