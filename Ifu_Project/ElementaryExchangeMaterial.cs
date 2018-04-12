@@ -51,8 +51,13 @@ namespace IfuControl
         }
 
         [XmlElement("compartment")]
-        public compartments Compartment=new compartments();
-        
+        public compartments classificationCompartment=new compartments();
+        public compartments Classification_Compartment
+        {
+            get { return classificationCompartment; }
+            set { }
+        }
+
     }
 
 

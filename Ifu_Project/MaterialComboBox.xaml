@@ -4,31 +4,90 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:IfuControl"
+             
              mc:Ignorable="d" 
              d:DesignHeight="200" d:DesignWidth="200">
+    <UserControl.Resources>
+
+        <local:MaterialTemplateSelector x:Key="myMaterialTemplateSelector"/>
+
+            <DataTemplate DataType="{x:Type local:intermediateExchange}" x:Key="intermediate"  >
+
+                <StackPanel Orientation="Vertical">
+                <TextBlock Text="Intermediate Exchange:" Background="Yellow">
+                <LineBreak/>
+                </TextBlock>
+                <StackPanel Margin="20,0,0,0">
+                    <TextBlock Text="{Binding Path=Name,StringFormat='Name:{0}'}"  />
+                    <TextBlock  DataContext="{Binding Path=Classification_Value}" Text="{Binding Path=ClassValue,StringFormat='Classification:{0}'}">
+                    <LineBreak/>
+                    </TextBlock>
+                </StackPanel>
+            </StackPanel>
+            </DataTemplate>
+            <DataTemplate   DataType="{x:Type local:elementaryExchange}"  x:Key="elementary" >
+                <StackPanel Orientation="Vertical">
+                <TextBlock Text="Elementary Exchange:" Background="Red">
+                <LineBreak/>
+                    
+                </TextBlock>
+                <StackPanel Margin="20,0,0,0">
+                    <TextBlock Text="{Binding Path=Name,StringFormat='Name:{0}'}"  />
+                
+                    <TextBlock  DataContext="{Binding Path=Classification_Compartment}" Text="{Binding Path=Compartment,StringFormat='Compartment:{0}'}"/>
+                    <TextBlock  DataContext="{Binding Path=Classification_Compartment}" Text="{Binding Path=Subcompartment,StringFormat='Subcompartment:{0}'}">
+            <LineBreak/>
+                    </TextBlock>
+                </StackPanel>
+            </StackPanel>
+            </DataTemplate>
+        
+    </UserControl.Resources>
 
     <ComboBox xmlns:sys="clr-namespace:System;assembly=mscorlib" 
           Name="Research"           
           IsEditable="True"   
           Selector.IsSelected="True" 
           SelectionChanged="Research_SelectedItem"      
-          IsDropDownOpen="False" StaysOpenOnEdit="True"   IsTextSearchEnabled="False" TextBoxBase.TextChanged="Research_TextChanged"  VerticalAlignment="Stretch"    >
+          IsDropDownOpen="False" StaysOpenOnEdit="True"   IsTextSearchEnabled="False" TextBoxBase.TextChanged="Research_TextChanged" ItemTemplateSelector="{StaticResource myMaterialTemplateSelector}"  VerticalAlignment="Stretch"     >
         
-        <ComboBox.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel Orientation="Horizontal">
-
-                        <TextBlock Text="{Binding Name}" />
-
-                        <TextBlock Text="{Binding classification_Value.ClassValue}" />
-
-                    </StackPanel>
-                </DataTemplate>
-
-            </ComboBox.ItemTemplate>
-
-
-
-        </ComboBox>
-    
+    </ComboBox>
 </UserControl>
+
+<!--
+    <ComboBox.Style>
+        <Style TargetType="ComboBox">
+            <Setter Property="ItemTemplate" Value="{StaticResource intermediate}"/>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding }">
+                    <Setter Property="ItemTemplate" Value="{StaticResource elementary}" />
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+    </ComboBox.Style> -->
+<!--</UserControl>
+
+ItemTemplate="{StaticResource intermediate}"
+
+<DataTemplate x:Key="PersonTemplate" DataType="{x:Type local:ConsumerViewModel}">
+    <TextBlock Text="I'm a Person" />
+</DataTemplate>
+
+<DataTemplate x:Key="BusinessTemplate" DataType="{x:Type local:ConsumerViewModel}">
+    <TextBlock Text="I'm a Business" />
+</DataTemplate>
+
+<DataTemplate DataType="{x:Type local:ConsumerViewModel}">
+    <ContentControl Content="{Binding }">
+        <ContentControl.Style>
+            <Style TargetType="{x:Type ContentControl}">
+                <Setter Property="ContentTemplate" Value="{StaticResource PersonTemplate}" />
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding ConsumerType}" Value="Business">
+                        <Setter Property="ContentTemplate" Value="{StaticResource BusinessTemplate}" />
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+        </ContentControl.Style>
+    </ContentControl>
+</DataTemplate>-->

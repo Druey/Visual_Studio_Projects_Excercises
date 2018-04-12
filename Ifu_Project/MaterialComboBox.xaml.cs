@@ -62,13 +62,13 @@ namespace IfuControl
 
                 List<intermediateExchange> List1 = IntermediateExchanges.Materials.FindAll(x => x.Name.IndexOf(Research.Text,0, StringComparison.OrdinalIgnoreCase) >=0);
 
-                List<intermediateExchange> List2 = IntermediateExchanges.Materials.FindAll(x => x.classificationValue.ClassValue.IndexOf(Research.Text, 0, StringComparison.OrdinalIgnoreCase) >= 0);
+                List<intermediateExchange> List2 = IntermediateExchanges.Materials.FindAll(x => x.Classification_Value.ClassValue.IndexOf(Research.Text, 0, StringComparison.OrdinalIgnoreCase) >= 0);
 
                 List<elementaryExchange> List3 = ElementaryExchanges.Materials.FindAll(x => x.Name.IndexOf(Research.Text, 0, StringComparison.OrdinalIgnoreCase) >= 0);
 
-                List<elementaryExchange> List4 = ElementaryExchanges.Materials.FindAll(x => x.Compartment.Compartment.IndexOf(Research.Text, 0, StringComparison.OrdinalIgnoreCase) >= 0);
+                List<elementaryExchange> List4 = ElementaryExchanges.Materials.FindAll(x => x.Classification_Compartment.Compartment.IndexOf(Research.Text, 0, StringComparison.OrdinalIgnoreCase) >= 0);
 
-                List<elementaryExchange> List5 = ElementaryExchanges.Materials.FindAll(x => x.Compartment.Subcompartment.IndexOf(Research.Text, 0, StringComparison.OrdinalIgnoreCase) >= 0);
+                List<elementaryExchange> List5 = ElementaryExchanges.Materials.FindAll(x => x.Classification_Compartment.Subcompartment.IndexOf(Research.Text, 0, StringComparison.OrdinalIgnoreCase) >= 0);
 
                 List1.AddRange(List2);
                 

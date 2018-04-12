@@ -48,7 +48,13 @@ namespace IfuControl
             set { unitName = value; }
         }
         [XmlElement("classification")]
-        public classification_Value classificationValue=new classification_Value(); 
+        public classification_Value classificationValue=new classification_Value();
+        public classification_Value Classification_Value
+        {
+            get { return classificationValue; }
+            set { }
+        }
+        
     }
 
     public class classification_Value
