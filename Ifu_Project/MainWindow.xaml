@@ -6,9 +6,14 @@
         xmlns:local="clr-namespace:Ifu_Project"
         xmlns:control = "clr-namespace:IfuControl"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="480" Width="525">
 
     <Grid>
-        <control:ExchangeGrid/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="300"/>
+            <RowDefinition Height="100"/>
+        </Grid.RowDefinitions>
+        <control:ExchangeGrid Grid.Row="0" />
+        <control:QueryCommand Grid.Row="1"/>
     </Grid>
 </Window>

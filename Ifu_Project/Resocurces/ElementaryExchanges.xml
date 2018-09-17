@@ -4,14 +4,13 @@ The contents of this file are subject to the EcoSpold Public License Version 1.0
 Software distributed under the License is distributed on an "AS IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License for the specific language governing rights and limitations under the License.
 The Original Code consists of the EcoSpold data format and EcoSpold Access.
 The Original Code was created by the ecoinvent Centre, Switzerland (Swiss Centre for Life Cycle Inventories) and ifu Hamburg GmbH, Germany. Portions created by the ecoinvent Centre and ifu Hamburg GmbH are Copyright (C) ecoinvent Centre. All Rights Reserved.
-majorRelease="3" minorRelease="0" majorRevision="0" minorRevision="39438" xmlns="http://www.EcoInvent.org/EcoSpold02"
 -->
-<validElementaryExchanges>
+<validElementaryExchanges majorRelease="3" minorRelease="0" majorRevision="0" minorRevision="39438" xmlns="http://www.EcoInvent.org/EcoSpold02">
   <elementaryExchange id="38a622c6-f086-4763-a952-7c6b3b1c42ba" unitId="487df68b-4994-4027-8fdc-a4dc298257b7" casNumber="000110-63-4">
     <name xml:lang="en">1,4-Butanediol</name>
     <unitName xml:lang="en">kg</unitName>
-    <compartment>
-      <compartment>air</compartment>
+    <compartment subcompartmentId="e8d7772c-55ca-4dd7-b605-fee5ae764578">
+      <compartment xml:lang="en">air</compartment>
       <subcompartment xml:lang="en">urban air close to ground</subcompartment>
     </compartment>
     <synonym xml:lang="en">Butylene glycol</synonym>

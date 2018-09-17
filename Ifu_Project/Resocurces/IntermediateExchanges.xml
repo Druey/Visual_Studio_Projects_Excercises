@@ -4,9 +4,8 @@ The contents of this file are subject to the EcoSpold Public License Version 1.0
 Software distributed under the License is distributed on an "AS IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License for the specific language governing rights and limitations under the License.
 The Original Code consists of the EcoSpold data format and EcoSpold Access.
 The Original Code was created by the ecoinvent Centre, Switzerland (Swiss Centre for Life Cycle Inventories) and ifu Hamburg GmbH, Germany. Portions created by the ecoinvent Centre and ifu Hamburg GmbH are Copyright (C) ecoinvent Centre. All Rights Reserved.
-majorRelease="3" minorRelease="0" majorRevision="0" minorRevision="26567" xmlns="http://www.EcoInvent.org/EcoSpold02"
 -->
-<validIntermediateExchanges>
+<validIntermediateExchanges majorRelease="3" minorRelease="0" majorRevision="0" minorRevision="26567" xmlns="http://www.EcoInvent.org/EcoSpold02">
   <intermediateExchange id="42761d87-05d9-4877-b21e-001ecf0c747d" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
     <name xml:lang="en">trawler maintenance, steel</name>
     <unitName xml:lang="en">kg</unitName>
@@ -40242,7 +40241,7 @@ Functional unit is kg of water evaporated</comment>
     <property propertyId="c74c3729-e577-4081-b572-a283d2561a75" amount="0" />
   </intermediateExchange>
   <intermediateExchange id="b21c5bf0-60da-4095-a5b4-cc8b8a3b2668" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
-    <name xml:lang="en">fludio sulfite</name>
+    <name xml:lang="en">sodium sulfite</name>
     <unitName xml:lang="en">kg</unitName>
     <classification classificationId="39b0f0ab-1a2f-401b-9f4d-6e39400760a4">
       <classificationSystem xml:lang="en">By-product classification</classificationSystem>
